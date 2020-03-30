@@ -138,15 +138,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DataCollectorDevice.cpp" />
-    <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Meteor.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DataCollectorDevice.h" />
-    <ClInclude Include="DateTime.h" />
-    <ClInclude Include="Meteor.h" />
+    <ClInclude Include="meteor_template.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
