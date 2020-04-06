@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "DateTime.h"
 
 DateTime::DateTime(int year, int month, int day, int hour, int minute, int second)
