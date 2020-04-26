@@ -9,5 +9,5 @@ int main()
 	std::vector<Meteor> v;
 	std::vector<std::vector<std::string>> v2;
 	DataCollectorDevice dcd;
-	v2 = dcd.return_csv_data("data/EDMONDv5.csv", ',');
+	v = dcd.collect_meteor_data("data/EDMONDv5.csv", ',');
 }
