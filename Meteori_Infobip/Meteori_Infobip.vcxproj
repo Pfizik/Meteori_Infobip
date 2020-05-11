@@ -142,11 +142,15 @@
     <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Meteor.cpp" />
+    <ClCompile Include="Tester.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataCollectorDevice.h" />
     <ClInclude Include="DateTime.h" />
+    <ClInclude Include="FileChecker.h" />
+    <ClInclude Include="FileReader.h" />
     <ClInclude Include="Meteor.h" />
+    <ClInclude Include="Tester.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

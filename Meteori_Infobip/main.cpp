@@ -3,6 +3,7 @@
 #include <string>
 #include "Meteor.h"
 #include "DataCollectorDevice.h"
+#include "Tester.h"
 
 int main()
 {
