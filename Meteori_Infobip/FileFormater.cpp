@@ -14,7 +14,7 @@ void format_file_remove_backslash_r(std::string file_name, std::string new_file_
 	}
 }
 
-void format_file_charSF(std::string file_name, std::string new_file_name, char ocs, char ncs)
+void format_file_change_char_seperator(std::string file_name, std::string new_file_name, char ocs, char ncs)
 {
 	std::ifstream in(file_name.c_str(), std::ios_base::binary);
 	std::ofstream out(new_file_name.c_str(), std::ios_base::binary);
