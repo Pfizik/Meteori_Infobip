@@ -43,25 +43,25 @@ std::vector<std::vector<std::string>> DataCollectorDevice::read_csv_file(std::st
 std::vector<Meteor> DataCollectorDevice::collect_meteor_data(std::string file_name, char vs)
 {
 	std::vector<Meteor> MeteorVec;
-	std::vector<std::vector<std::string>> FileRow = read_csv_file(file_name, vs);
+	std::vector<std::vector<std::string>> File = read_csv_file(file_name, vs);
 
-	for (int i = 1; i < FileRow.size(); i++)
+	for (int i = 1; i < File.size(); i++)
 	{
 		std::string s_year, s_month, s_day, s_hour, s_min, s_sec = "";
 		std::string s_solar_long, s_RA_geo, s_Decl_geo, s_V_geo, s_V_init = "";
 
-		for (int i = 1; i <= 4; i++)	s_year += FileRow[i].at(0)[i];
-		for (int i = 5; i <= 6; i++)	s_month += FileRow[i].at(0)[i];
-		for (int i = 7; i <= 8; i++)	s_day += FileRow[i].at(0)[i];
-		for (int i = 10; i <= 11; i++)	s_hour += FileRow[i].at(0)[i];
-		for (int i = 12; i <= 13; i++)	s_min += FileRow[i].at(0)[i];
-		for (int i = 14; i <= 15; i++)	s_sec += FileRow[i].at(0)[i];
+		for (int i = 1; i <= 4; i++)	s_year += File[i].at(0)[i];
+		for (int i = 5; i <= 6; i++)	s_month += File[i].at(0)[i];
+		for (int i = 7; i <= 8; i++)	s_day += File[i].at(0)[i];
+		for (int i = 10; i <= 11; i++)	s_hour += File[i].at(0)[i];
+		for (int i = 12; i <= 13; i++)	s_min += File[i].at(0)[i];
+		for (int i = 14; i <= 15; i++)	s_sec += File[i].at(0)[i];
 		
-		s_solar_long = FileRow[i].at(1);
-		s_RA_geo = FileRow[i].at(2);
-		s_Decl_geo = FileRow[i].at(3);
-		s_V_geo = FileRow[i].at(4);
-		s_V_init = FileRow[i].at(5);
+		s_solar_long = File[i].at(1);
+		s_RA_geo = File[i].at(2);
+		s_Decl_geo = File[i].at(3);
+		s_V_geo = File[i].at(4);
+		s_V_init = File[i].at(5);
 
 		int year, month, day, hour, min, sec;
 		double solar_longitude, RA_geometric, Decl_geometric, V_geometric, V_initial;
