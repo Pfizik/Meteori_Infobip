@@ -139,16 +139,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DataCollectorDevice.cpp" />
-    <ClCompile Include="DateTime.cpp" />
+    <ClCompile Include="FileFormater.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Meteor.cpp" />
-    <ClCompile Include="Tester.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataCollectorDevice.h" />
     <ClInclude Include="DateTime.h" />
-    <ClInclude Include="FileChecker.h" />
-    <ClInclude Include="FileReader.h" />
+    <ClInclude Include="FileFormater.h" />
     <ClInclude Include="Meteor.h" />
     <ClInclude Include="Tester.h" />
   </ItemGroup>

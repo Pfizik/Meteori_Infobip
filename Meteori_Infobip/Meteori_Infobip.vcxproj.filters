@@ -18,13 +18,10 @@
     <ClCompile Include="DataCollectorDevice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DateTime.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Meteor.cpp">
+    <ClCompile Include="FileFormater.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tester.cpp">
@@ -41,13 +38,7 @@
     <ClInclude Include="Meteor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FileChecker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FileReader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tester.h">
+    <ClInclude Include="FileFormater.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
