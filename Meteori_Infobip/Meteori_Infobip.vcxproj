@@ -139,10 +139,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DataCollectorDevice.cpp" />
-    <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="FileFormater.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Meteor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataCollectorDevice.h" />

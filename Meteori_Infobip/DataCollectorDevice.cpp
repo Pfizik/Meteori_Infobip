@@ -40,6 +40,30 @@ std::vector<std::vector<std::string>> DataCollectorDevice::read_csv_file(std::st
 	return vec;
 }
 
+DateTime DataCollectorDevice::string_to_dateTime(std::string string_cell)
+{
+	DateTime dataTime;
+
+	std::string s_year, s_month, s_day, s_hour, s_min, s_sec = "";
+	int year, month, day, hour, min, sec;
+
+	s_year += string_cell.substr(1, 4);
+	s_month += string_cell.substr(5, 6);
+	s_day += string_cell.substr(7, 8);
+	s_hour += string_cell.substr(10, 11);
+	s_min += string_cell.substr(12, 13);
+	s_sec += string_cell.substr(14, 15);
+
+	dataTime.year = std::stoi(s_year);
+	dataTime.month = std::stoi(s_month);
+	dataTime.day = std::stoi(s_day);
+	dataTime.hour = std::stoi(s_hour);
+	dataTime.min = std::stoi(s_min);
+	dataTime.sec = std::stoi(s_sec);
+
+	return dataTime;
+}
+
 std::vector<Meteor> DataCollectorDevice::collect_meteor_data(std::string file_name, char vs)
 {
 	std::vector<Meteor> MeteorVec;
@@ -47,40 +71,24 @@ std::vector<Meteor> DataCollectorDevice::collect_meteor_data(std::string file_na
 
 	for (int i = 1; i < File.size(); i++)
 	{
-		std::string s_year, s_month, s_day, s_hour, s_min, s_sec = "";
 		std::string s_solar_long, s_RA_geo, s_Decl_geo, s_V_geo, s_V_init = "";
 
-		for (int i = 1; i <= 4; i++)	s_year += File[i].at(0)[i];
-		for (int i = 5; i <= 6; i++)	s_month += File[i].at(0)[i];
-		for (int i = 7; i <= 8; i++)	s_day += File[i].at(0)[i];
-		for (int i = 10; i <= 11; i++)	s_hour += File[i].at(0)[i];
-		for (int i = 12; i <= 13; i++)	s_min += File[i].at(0)[i];
-		for (int i = 14; i <= 15; i++)	s_sec += File[i].at(0)[i];
-		
+		Meteor meteor;
+		meteor.dataTime = string_to_dateTime(File[i].at(0));
+
 		s_solar_long = File[i].at(1);
 		s_RA_geo = File[i].at(2);
 		s_Decl_geo = File[i].at(3);
 		s_V_geo = File[i].at(4);
-		s_V_init = File[i].at(5);
-
-		int year, month, day, hour, min, sec;
-		double solar_longitude, RA_geometric, Decl_geometric, V_geometric, V_initial;
+		s_V_init = File[i].at(5);		
 		
-		year = std::stoi(s_year);
-		month = std::stoi(s_month);
-		day = std::stoi(s_day);
-		hour = std::stoi(s_hour);
-		min = std::stoi(s_min);
-		sec = std::stoi(s_sec);
-		solar_longitude = std::stod(s_solar_long);
-		RA_geometric = std::stod(s_RA_geo);
-		Decl_geometric = std::stod(s_Decl_geo);
-		V_geometric = std::stod(s_V_geo);
-		V_initial = std::stod(s_V_init);
-
-		DateTime dateTime(year, month, day, hour, min, sec);
-		Meteor new_Loaded_Meteor(dateTime, solar_longitude, RA_geometric, Decl_geometric, V_geometric, V_initial);
-		MeteorVec.push_back(new_Loaded_Meteor);
+		meteor.solar_longitude = std::stod(s_solar_long);
+		meteor.RA_geometric = std::stod(s_RA_geo);
+		meteor.Decl_geometric = std::stod(s_Decl_geo);
+		meteor.V_geometric = std::stod(s_V_geo);
+		meteor.V_initial = std::stod(s_V_init);
+		
+		MeteorVec.push_back(meteor);
 	}
 
 	return MeteorVec;
