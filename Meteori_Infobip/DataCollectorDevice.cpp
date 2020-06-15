@@ -101,16 +101,7 @@ std::vector<std::vector<std::string>> DataCollectorDevice::return_csv_data(std::
 	std::vector<std::vector<std::string>> csv_file_data;
 	std::ifstream in(file_name.c_str(), std::ios_base::binary);
 
-	if (in.bad())
-	{
-		std::cout << "file is bad\n";
-		return std::vector<std::vector<std::string>>();
-	}
-	else if (in.fail())
-	{
-		std::cout << "failed to load file\n";
-		return std::vector<std::vector<std::string>>();
-	}
+	file_checker(csv_file_data, in);
 
 	std::vector<std::string> csv_file_row;
 	std::string variable_container = "";

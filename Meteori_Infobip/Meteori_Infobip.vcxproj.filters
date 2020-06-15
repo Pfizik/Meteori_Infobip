@@ -24,6 +24,9 @@
     <ClCompile Include="FileFormater.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataCollectorDevice.h">
